@@ -55,3 +55,4 @@ with open("comuniques.csv", "w") as f:
             text = article["text"]
     
             writer.writerow([date, author, title, text])
+            
