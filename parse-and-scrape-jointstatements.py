@@ -134,7 +134,7 @@ for link in shorts:
     numdate = datemaker(year, nummonth, day)
     
     # make it into a dictionary
-    doc = {"metadata": meta.string,
+    doc = {"title": meta.string,
     "text": collapsed,
     "doctype": "comunicado conjunto",
     "date": numdate }
@@ -144,15 +144,15 @@ for link in shorts:
     # print(documents_list)
 
 
-with open("comuniques.csv", "w") as f:
+with open("jointstatements.csv", "w") as f:
     writer = csv.writer(f)
     
-    writer.writerow(["metadata", "text", "doctype", "date"])
+    writer.writerow(["title", "text", "doctype", "date"])
     
     for document in documents_list:
-            metadata = document["metadata"]
+            title = document["title"]
             text = document["text"]
             doctype = document["doctype"]
             date = document["date"]
     
-            writer.writerow([metadata, text, doctype, date])
+            writer.writerow([title, text, doctype, date])
