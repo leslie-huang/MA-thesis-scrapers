@@ -79,7 +79,7 @@ def get_statement(statement_url):
         paragraphs = frame.find_all("p")
         text = " ".join([p.string for p in paragraphs if p.string is not None])
     
-        if bool(re.search("paz | la mesa | negociación | conflicto | las Farc ", text)):
+        if bool(re.search("Farc", text)) & bool(re.search("paz", text)):
             return {
                 "date": date,
                 "title": title,

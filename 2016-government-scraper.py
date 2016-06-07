@@ -3,7 +3,7 @@
 import csv
 from government_statement_scraping_utilities import get_result_urls, get_links, get_statement
 
-with open("2016statements.csv", "w") as f:
+with open("govtstatements2016.csv", "w") as f:
     writer = csv.writer(f)    
     writer.writerow(["title", "text", "date"])
     

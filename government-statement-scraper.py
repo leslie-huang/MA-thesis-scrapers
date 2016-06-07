@@ -112,8 +112,8 @@ for page in day_archive_pages:
             paragraphs = main.find_all("p")
             text = collapsed = " ".join([p.string for p in paragraphs if p.string is not None])
         
-            # continue only if the text contains the following keywords: "paz", "Farc", "la mesa", "negociación", "conflicto"
-            if bool(re.search("paz | la mesa | negociación | conflicto | las Farc ", text)):
+            # continue only if the text contains the following keywords: "paz", "Farc"
+            if bool(re.search("las Farc", text)) & bool(re.search("paz", text)):
     
                 # save address, title, text, and date as values in the dictionary
                 article_dict["URL"] = address
